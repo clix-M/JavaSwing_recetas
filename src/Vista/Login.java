@@ -94,12 +94,14 @@ public class Login extends JFrame {
 		passwFieldContraseña.setBounds(310, 152, 166, 20);
 		panel.add(passwFieldContraseña);
 		
+		// this is sign-in
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-iniciar-sesión-16.png")));
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnLogin.setBounds(310, 201, 166, 23);
 		panel.add(btnLogin);
 		
+		// this is sign-up
 		JButton btnRegister = new JButton("REGISTER");
 		btnRegister.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-añadir-usuario-masculino-16.png")));
 		btnRegister.setFont(new Font("Tahoma", Font.BOLD, 11));
