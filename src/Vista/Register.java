@@ -24,7 +24,7 @@ public class Register extends JFrame {
 
 	/**
 	 * Launch the application.
-	 * remodific
+	 * remodifi
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
