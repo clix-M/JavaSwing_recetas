@@ -1,33 +1,28 @@
 package Vista;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.border.EmptyBorder;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textUsuario;
-	private JPasswordField passwFieldContraseña;
 
 	/**
 	 * Launch the application.
+	 * remodific
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -35,7 +30,6 @@ public class Login extends JFrame {
 				try {
 					Login frame = new Login();
 					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,7 +73,7 @@ public class Login extends JFrame {
 		lblUsuario.setBounds(310, 91, 166, 14);
 		panel.add(lblUsuario);
 		
-		textUsuario = new JTextField();
+		JTextField textUsuario = new JTextField();
 		textUsuario.setBounds(310, 105, 166, 20);
 		panel.add(textUsuario);
 		textUsuario.setColumns(10);
@@ -90,7 +84,7 @@ public class Login extends JFrame {
 		lblContraseña.setBounds(310, 136, 166, 14);
 		panel.add(lblContraseña);
 		
-		passwFieldContraseña = new JPasswordField();
+		JPasswordField passwFieldContraseña = new JPasswordField();
 		passwFieldContraseña.setBounds(310, 152, 166, 20);
 		panel.add(passwFieldContraseña);
 		
@@ -116,4 +110,5 @@ public class Login extends JFrame {
 		btnRegister.setBounds(310, 235, 166, 23);
 		panel.add(btnRegister);
 	}
+
 }

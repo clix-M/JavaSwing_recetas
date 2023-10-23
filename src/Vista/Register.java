@@ -1,32 +1,30 @@
 package Vista;
 
+import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JCheckBox;
-import java.awt.Cursor;
 
 public class Register extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField passwordField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
+	 * remodific
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -73,7 +71,7 @@ public class Register extends JFrame {
 		lblUsuario.setBounds(300, 67, 169, 14);
 		contentPane.add(lblUsuario);
 		
-		textField = new JTextField();
+		JTextField textField = new JTextField();
 		textField.setColumns(10);
 		textField.setBounds(300, 81, 169, 20);
 		contentPane.add(textField);
@@ -84,7 +82,7 @@ public class Register extends JFrame {
 		lblContraseña.setBounds(300, 157, 169, 14);
 		contentPane.add(lblContraseña);
 		
-		passwordField = new JPasswordField();
+		JPasswordField passwordField = new JPasswordField();
 		passwordField.setBounds(300, 173, 169, 20);
 		contentPane.add(passwordField);
 		
@@ -114,7 +112,7 @@ public class Register extends JFrame {
 		lblCorreo.setBounds(300, 112, 169, 14);
 		contentPane.add(lblCorreo);
 		
-		textField_1 = new JTextField();
+		JTextField textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(300, 126, 169, 20);
 		contentPane.add(textField_1);
@@ -135,4 +133,5 @@ public class Register extends JFrame {
 		chckbxNewCheckBox.setBounds(300, 193, 169, 14);
 		contentPane.add(chckbxNewCheckBox);
 	}
+
 }
