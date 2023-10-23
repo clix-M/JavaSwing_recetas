@@ -125,9 +125,9 @@ public class Login extends JFrame {
 		panel.add(separator_1);
 		
        
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-usuario-masculino-en-círculo-48.png")));
-		lblNewLabel_1.setBounds(358, 36, 48, 50);
-		panel.add(lblNewLabel_1);
+		JLabel lbliconUser = new JLabel("");
+		lbliconUser.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-usuario-masculino-en-círculo-48.png")));
+		lbliconUser.setBounds(358, 36, 48, 50);
+		panel.add(lbliconUser);
 	}
 }
