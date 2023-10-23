@@ -1,23 +1,29 @@
 package Vista;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JSeparator;
-import java.awt.Color;
-import java.awt.SystemColor;
+
+import Modelo.Conexion;
 
 public class Login extends JFrame {
 
@@ -102,7 +108,42 @@ public class Login extends JFrame {
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnLogin.setBounds(296, 201, 180, 23);
 		panel.add(btnLogin);
+		// validation
 		
+		btnLogin.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String user = textUsuario.getText();
+				String contrasena = new String(passwFieldContraseña.getPassword());
+				
+				if(user.equals("") || passwFieldContraseña.getPassword().length == 0) {
+					JOptionPane.showMessageDialog(panel, "ingrese el usuario y la contraseña");
+					return;
+				}
+				try {
+					Statement data = Conexion.getConnection().createStatement();
+					ResultSet query = data.executeQuery("SELECT * FROM usuarios WHERE nombre='" + user + "' AND contrasena='" + contrasena + "'");
+					
+					if(query.next()) {
+						JOptionPane.showMessageDialog(panel, "Puedes ingresar.");
+					}else {
+						JOptionPane.showMessageDialog(panel, "Necesitas registrarte.");
+					}
+					
+					data.close();
+					
+					
+					
+				}catch (SQLException ex) {
+	                ex.printStackTrace();
+	            }
+				
+				
+			}
+		});
+		
+		
+	
 		// this is sign-up
 		JButton btnRegister = new JButton("REGISTER");
 		btnRegister.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-añadir-usuario-masculino-16.png")));

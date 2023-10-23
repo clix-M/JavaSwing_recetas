@@ -133,5 +133,9 @@ public class Register extends JFrame {
 		chckbxNewCheckBox.setBounds(300, 193, 169, 14);
 		contentPane.add(chckbxNewCheckBox);
 	}
+	
+	// logic 
+	
+	
 
 }
