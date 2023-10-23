@@ -15,6 +15,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class Login extends JFrame {
 
@@ -30,6 +33,7 @@ public class Login extends JFrame {
 				try {
 					Login frame = new Login();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,40 +63,44 @@ public class Login extends JFrame {
         Image newImage = image.getScaledInstance(329, 292, Image.SCALE_SMOOTH);
         
 		JLabel lblNewLabel = new JLabel("",new ImageIcon(newImage), SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 11, 247, 292);
+		lblNewLabel.setForeground(new Color(0, 0, 0));
+		lblNewLabel.setBounds(10, 11, 244, 292);
 		panel.add(lblNewLabel);
 		
 		JLabel lblLogin = new JLabel("LOGIN");
+		lblLogin.setForeground(SystemColor.textHighlight);
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblLogin.setBounds(362, 41, 63, 14);
+		lblLogin.setBounds(358, 11, 54, 14);
 		panel.add(lblLogin);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-usuario-16.png")));
 		lblUsuario.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblUsuario.setBounds(310, 91, 166, 14);
+		lblUsuario.setBounds(296, 91, 180, 14);
 		panel.add(lblUsuario);
 		
 		JTextField textUsuario = new JTextField();
-		textUsuario.setBounds(310, 105, 166, 20);
+		textUsuario.setForeground(new Color(0, 0, 0));
+		textUsuario.setToolTipText("");
+		textUsuario.setBounds(296, 105, 180, 20);
 		panel.add(textUsuario);
 		textUsuario.setColumns(10);
 		
 		JLabel lblContraseña = new JLabel("Contraseña");
 		lblContraseña.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-contraseña-16.png")));
 		lblContraseña.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblContraseña.setBounds(310, 136, 166, 14);
+		lblContraseña.setBounds(296, 136, 180, 14);
 		panel.add(lblContraseña);
 		
 		JPasswordField passwFieldContraseña = new JPasswordField();
-		passwFieldContraseña.setBounds(310, 152, 166, 20);
+		passwFieldContraseña.setBounds(296, 152, 180, 20);
 		panel.add(passwFieldContraseña);
 		
 		// this is sign-in
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-iniciar-sesión-16.png")));
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnLogin.setBounds(310, 201, 166, 23);
+		btnLogin.setBounds(296, 201, 180, 23);
 		panel.add(btnLogin);
 		
 		// this is sign-up
@@ -107,8 +115,19 @@ public class Login extends JFrame {
 				dispose();
 			}
 		});
-		btnRegister.setBounds(310, 235, 166, 23);
+		btnRegister.setBounds(296, 235, 180, 23);
 		panel.add(btnRegister);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBackground(new Color(128, 128, 128));
+		separator_1.setForeground(new Color(0, 0, 0));
+		separator_1.setBounds(296, 123, 180, 2);
+		panel.add(separator_1);
+		
+       
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-usuario-masculino-en-círculo-48.png")));
+		lblNewLabel_1.setBounds(358, 36, 48, 50);
+		panel.add(lblNewLabel_1);
 	}
-
 }
