@@ -5,8 +5,8 @@ CREATE TABLE `usuarios` (
   `contrasena` VARCHAR(255)
 );
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo_electronico`, `contrasena`)
-VALUES (1, 'clinton', 'clinton@example.com', '2023elp');
+INSERT INTO `usuarios` (`nombre`, `correo_electronico`, `contrasena`)
+VALUES ('clinton', 'clinton@example.com', '2023elp');
 
 
 CREATE TABLE `recetas` (
@@ -47,3 +47,4 @@ ALTER TABLE `recetas_ingredientes` ADD FOREIGN KEY (`receta_id`) REFERENCES `rec
 ALTER TABLE `recetas_ingredientes` ADD FOREIGN KEY (`ingrediente_id`) REFERENCES `ingredientes` (`id`);
 
 ALTER TABLE `pasos` ADD FOREIGN KEY (`receta_id`) REFERENCES `recetas` (`id`);
+
