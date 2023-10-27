@@ -75,3 +75,78 @@ public class Main {
     }
 }
 ```
+
+
+```java 
+@Entity
+@Table(name = "usuarios")
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nombre;
+    private String correo_electronico;
+    private String contrasena;
+    // getters y setters
+}
+
+@Entity
+@Table(name = "recetas")
+public class Receta {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String titulo;
+    private String descripcion;
+    private int tiempo_preparacion;
+    private int tiempo_coccion;
+    private int porciones;
+    private String dificultad;
+    private String imagen;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+    // getters y setters
+}
+
+@Entity
+@Table(name = "ingredientes")
+public class Ingrediente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nombre;
+    private String cantidad;
+    // getters y setters
+}
+
+@Entity
+@Table(name = "recetas_ingredientes")
+public class RecetaIngrediente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "receta_id")
+    private Receta receta;
+    @ManyToOne
+    @JoinColumn(name = "ingrediente_id")
+    private Ingrediente ingrediente;
+    // getters y setters
+}
+
+@Entity
+@Table(name = "pasos")
+public class Paso {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String descripcion;
+    private int orden;
+    @ManyToOne
+    @JoinColumn(name = "receta_id")
+    private Receta receta;
+    // getters y setters
+}
+```
+
