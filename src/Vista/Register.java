@@ -66,7 +66,7 @@ public class Register extends JFrame {
         Image newImage = image.getScaledInstance(329, 292, Image.SCALE_SMOOTH);
         
 		JLabel lblNewLabel = new JLabel("",new ImageIcon(newImage), SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 11, 210, 292);
+		lblNewLabel.setBounds(10, 11, 240, 292);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblRegister = new JLabel("REGISTER");
