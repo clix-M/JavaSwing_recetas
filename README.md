@@ -7,9 +7,8 @@ Systema de gestion de recetas de cocina
 ![Vista](/src/img/db.png)
 
 ```java sql
-
 CREATE TABLE Receta (
-  id_receta INT PRIMARY KEY,
+  id_receta INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(255),
   descripcion TEXT,
   tiempo_de_preparacion INT,
@@ -19,44 +18,44 @@ CREATE TABLE Receta (
 );
 
 CREATE TABLE Categoria (
-  id_categoria INT PRIMARY KEY,
+  id_categoria INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(255)
 );
 
 CREATE TABLE Ingrediente (
-  id_ingrediente INT PRIMARY KEY,
+  id_ingrediente INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(255),
   medida VARCHAR(255)
 );
 
 CREATE TABLE Ingrediente_receta (
-  id_ingrediente_receta INT PRIMARY KEY,
+  id_ingrediente_receta INT PRIMARY KEY AUTO_INCREMENT,
   id_receta INT,
   id_ingrediente INT,
   cantidad INT
 );
 
 CREATE TABLE Comentarios (
-  id_comentarios INT PRIMARY KEY,
+  id_comentarios INT PRIMARY KEY AUTO_INCREMENT,
   id_receta INT,
   nombre_autor VARCHAR(255),
   fecha DATE
 );
 
 CREATE TABLE Usuario (
-  id_usuario INT PRIMARY KEY,
+  id_usuario INT PRIMARY KEY AUTO_INCREMENT,
   nombre VARCHAR(255),
   contrasena VARCHAR(255),
   correo_electronico VARCHAR(255)
 );
 
 CREATE TABLE Favorito (
-  id_favorito INT PRIMARY KEY,
+  id_favorito INT PRIMARY KEY AUTO_INCREMENT,
   id_usuario INT,
   id_receta INT
 );
 
--- relacionando las tablas
+-- relacionando las tablas -- 
 ALTER TABLE Receta
 ADD FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria);
 
