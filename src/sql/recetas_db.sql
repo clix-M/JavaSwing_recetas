@@ -46,7 +46,7 @@ CREATE TABLE Favorito (
   id_receta INT
 );
 
--- relacionando las tablas
+-- relacionando las tablas -- 
 ALTER TABLE Receta
 ADD FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria);
 
