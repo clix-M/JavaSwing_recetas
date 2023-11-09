@@ -53,7 +53,7 @@ public class Register extends JFrame {
 	 * Create the frame.
 	 */
 	public Register() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 543, 353);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -119,7 +119,7 @@ public class Register extends JFrame {
 				String contrasena = new String (passwordField.getPassword());
 				
 				if(user.equals("") || correo.equals("") || passwordField.getPassword().length ==0) {
-					JOptionPane.showMessageDialog(contentPane, "Complete el formulario");
+					JOptionPane.showMessageDialog(contentPane, "Ingreso todos los campos requeridos");
 					return;
 				}
 				
