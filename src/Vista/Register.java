@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Panel;
+import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -53,6 +54,7 @@ public class Register extends JFrame {
 	 * Create the frame.
 	 */
 	public Register() {
+		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 543, 353);
 		contentPane = new JPanel();
@@ -157,7 +159,7 @@ public class Register extends JFrame {
 		//
 		
 		
-		JButton btnRegister = new JButton("LOGIN");
+		/*JButton btnRegister = new JButton("LOGIN");
 		btnRegister.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRegister.setIcon(new ImageIcon(Register.class.getResource("/img/icons8-iniciar-sesión-16.png")));
 		btnRegister.addActionListener(new ActionListener() {
@@ -169,7 +171,7 @@ public class Register extends JFrame {
 			}
 		});
 		btnRegister.setBounds(300, 266, 169, 23);
-		contentPane.add(btnRegister);
+		contentPane.add(btnRegister);*/
 		
 	
 		

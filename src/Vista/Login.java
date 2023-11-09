@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.SystemColor;
+import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -51,6 +52,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
+		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 543, 353);
 		contentPane = new JPanel();
@@ -114,6 +116,7 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				String user = textUsuario.getText();
 				String contrasena = new String(passwFieldContraseña.getPassword());
 				
@@ -126,6 +129,11 @@ public class Login extends JFrame {
 					ResultSet query = data.executeQuery("SELECT * FROM usuarios WHERE nombre='" + user + "' AND contrasena='" + contrasena + "'");
 					
 					if(query.next()) {
+						//abrira la ventana principal si ya tiene una cuenta creada...
+		    			VentanaPrincipal vp = new VentanaPrincipal();
+		    			vp.setVisible(true);
+		    			vp.setLocationRelativeTo(null);
+		    			
 						JOptionPane.showMessageDialog(panel, "Puedes ingresar.");
 					}else {
 						JOptionPane.showMessageDialog(panel, "Necesitas registrarte.");
@@ -139,13 +147,12 @@ public class Login extends JFrame {
 	                ex.printStackTrace();
 	            }
 				
-				
 			}
 		});
 		
 		
 	
-		// this is sign-up
+		/* this is sign-up
 		JButton btnRegister = new JButton("REGISTER");
 		btnRegister.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-añadir-usuario-masculino-16.png")));
 		btnRegister.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -171,5 +178,7 @@ public class Login extends JFrame {
 		lbliconUser.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-usuario-masculino-en-círculo-48.png")));
 		lbliconUser.setBounds(358, 36, 48, 50);
 		panel.add(lbliconUser);
+	}*/
+
 	}
 }

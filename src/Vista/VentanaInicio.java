@@ -1,5 +1,7 @@
 package Vista;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.FlowLayout;
@@ -18,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 public class VentanaInicio extends JFrame {
 
@@ -63,10 +66,11 @@ public class VentanaInicio extends JFrame {
         Image newImage = image.getScaledInstance(329, 292, Image.SCALE_SMOOTH);
         
 		JLabel lblBanner = new JLabel("",new ImageIcon(newImage), SwingConstants.CENTER);
-		lblBanner.setBounds(10, 89, 715, 227);
+		lblBanner.setBounds(10, 107, 715, 227);
 		contentPane.add(lblBanner);
 		
 		JButton btnLogin = new JButton("INICIAR SESION");
+		btnLogin.setIcon(new ImageIcon(VentanaInicio.class.getResource("/img/icons8-iniciar-sesión-16.png")));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login lg = new Login();
@@ -78,8 +82,16 @@ public class VentanaInicio extends JFrame {
 		contentPane.add(btnLogin);
 		
 		JLabel lblCreate = new JLabel("Crear una Cuenta");
-		lblCreate.setBounds(298, 405, 170, 14);
+		lblCreate.setBounds(298, 405, 121, 14);
 		contentPane.add(lblCreate);
+		lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		
+		JLabel lblNewLabel = new JLabel("Porfavor inicia sesion para ver las diferentes recetas que tenemos,"
+				+ " en caso no tenga una cuenta,"
+				+ "puedes crear una.");
+		lblNewLabel.setFont(new Font("Tahoma", Font.ITALIC, 12));
+		lblNewLabel.setBounds(55, 41, 651, 32);
+		contentPane.add(lblNewLabel);
 		
         lblCreate.addMouseListener(new MouseAdapter() {
             @Override
@@ -87,6 +99,17 @@ public class VentanaInicio extends JFrame {
     			Register rg = new Register();
 				rg.setVisible(true);
 				rg.setLocationRelativeTo(null);
+            }
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                // Cambiar el color del texto a otro color cuando el mouse entra
+                lblCreate.setForeground(Color.BLUE);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                // Restaurar el color original cuando el mouse sale
+                lblCreate.setForeground(Color.BLACK);
             }
         });
 	}
