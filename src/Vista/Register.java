@@ -4,12 +4,8 @@ import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.Panel;
-import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -190,9 +186,5 @@ public class Register extends JFrame {
 		chckbxNewCheckBox.setBounds(300, 193, 169, 14);
 		contentPane.add(chckbxNewCheckBox);
 	}
-	
-	// logic 
-	
-	
 
 }

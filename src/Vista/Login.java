@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.SystemColor;
-import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -19,7 +18,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -80,7 +78,7 @@ public class Login extends JFrame {
 		JLabel lblLogin = new JLabel("LOGIN");
 		lblLogin.setForeground(SystemColor.textHighlight);
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblLogin.setBounds(358, 11, 54, 14);
+		lblLogin.setBounds(343, 40, 54, 14);
 		panel.add(lblLogin);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
@@ -182,4 +180,5 @@ public class Login extends JFrame {
 	}*/
 
 	}
+
 }
