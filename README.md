@@ -39,7 +39,8 @@ CREATE TABLE Comentarios (
   id_comentarios INT PRIMARY KEY AUTO_INCREMENT,
   id_receta INT,
   nombre_autor VARCHAR(255),
-  fecha DATE
+  fecha DATE,
+  comentario TEXT
 );
 
 CREATE TABLE Usuario (
