@@ -1,26 +1,26 @@
 package Vista;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import java.awt.Font;
-import javax.swing.JTextArea;
-import javax.swing.JSpinner;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class AddReceta extends JFrame {
 
 	private JPanel contentPane;
 	private JComboBox<String> comboBoxOpciones;
 	private JComboBox<String> comboBoxOpcionCat;
+	private JComboBox<String> comboBoxOpcionFav;
 	private JTextField textFieldNombreReceta;
 	private JTextField textFieldTiempoPrep;
 	private JTextField textFieldNombreIngred;
@@ -181,6 +181,19 @@ public class AddReceta extends JFrame {
 	        lblCategoria.setBounds(10, 241, 69, 14);
 	        contentPane.add(lblCategoria);
 	        
+	        JComboBox comboBoxOpcionCat = new JComboBox();
+	        comboBoxOpcionCat.setBounds(10, 255, 162, 22);
+			 DefaultComboBoxModel<String> comboBoxModel2 = new DefaultComboBoxModel<>();
+			 	comboBoxModel2.addElement("");
+		        comboBoxModel2.addElement("Pollito con papas");
+		        comboBoxModel2.addElement("Chaufita");
+		        comboBoxModel2.addElement("Mazamorra");
+		        comboBoxModel2.addElement("Tu ex");
+		        comboBoxModel2.addElement("Pollo a la Brasa");
+
+		        comboBoxOpcionCat.setModel(comboBoxModel2);
+		        contentPane.add(comboBoxOpcionCat);
+	        
 	        JLabel lblTitleIngredientes = new JLabel("INGREDIENTE:");
 	        lblTitleIngredientes.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleIngredientes.setBounds(196, 81, 103, 14);
@@ -190,6 +203,17 @@ public class AddReceta extends JFrame {
 	        lblTitleFavorito.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleFavorito.setBounds(584, 81, 103, 14);
 	        contentPane.add(lblTitleFavorito);
+	        
+	        JComboBox comboBoxOpcionFav = new JComboBox();
+	        comboBoxOpcionFav.setBounds(580, 117, 103, 22);
+			 DefaultComboBoxModel<String> comboBoxModel3 = new DefaultComboBoxModel<>();
+			 	comboBoxModel3.addElement("");
+		        comboBoxModel3.addElement("Si");
+		        comboBoxModel3.addElement("No");
+
+		        comboBoxOpcionFav.setModel(comboBoxModel3);
+		        contentPane.add(comboBoxOpcionFav);
+	        
 	        
 	        JButton btnGuardar = new JButton("GUARDAR");
 	        btnGuardar.addActionListener(new ActionListener() {
@@ -204,17 +228,7 @@ public class AddReceta extends JFrame {
 	        lblTitleReceta.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleReceta.setBounds(10, 80, 162, 14);
 	        contentPane.add(lblTitleReceta);
-	        
-	        JComboBox comboBoxOpcionCat = new JComboBox();
-	        comboBoxOpcionCat.setBounds(10, 255, 162, 22);
-			 DefaultComboBoxModel<String> comboBoxModel2 = new DefaultComboBoxModel<>();
-			 	comboBoxModel2.addElement("");
-		        comboBoxModel2.addElement("Fácil");
-		        comboBoxModel2.addElement("Intermedio");
-		        comboBoxModel2.addElement("Difícil");
-
-		        comboBoxOpcionCat.setModel(comboBoxModel2);
-		        contentPane.add(comboBoxOpcionCat);
-	        contentPane.add(comboBoxOpcionCat);
+		        
 	}
+
 }
