@@ -14,6 +14,7 @@ public class VentanaPrincipal extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JButton btnVerReceta;
 
 	/**
 	 * Launch the application.
@@ -54,12 +55,16 @@ public class VentanaPrincipal extends JFrame {
     			
 			}
 		});
-		btnAddReceta.setBounds(294, 386, 147, 38);
+		btnAddReceta.setBounds(221, 386, 147, 38);
 		contentPane.add(btnAddReceta);
 		
 		table = new JTable();
 		table.setBounds(10, 11, 729, 349);
 		contentPane.add(table);
+		
+		btnVerReceta = new JButton("VER RECETA");
+		btnVerReceta.setBounds(385, 386, 147, 38);
+		contentPane.add(btnVerReceta);
 	}
 
 }

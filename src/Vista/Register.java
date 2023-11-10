@@ -23,6 +23,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import Modelo.Conexion;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class Register extends JFrame {
 
@@ -55,6 +57,7 @@ public class Register extends JFrame {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 543, 353);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -69,6 +72,7 @@ public class Register extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblRegister = new JLabel("REGISTER");
+		lblRegister.setForeground(SystemColor.textHighlight);
 		lblRegister.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblRegister.setBounds(335, 25, 93, 14);
 		contentPane.add(lblRegister);

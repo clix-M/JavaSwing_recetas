@@ -155,7 +155,7 @@ public class AddRecet extends JFrame {
 		contentPane.add(textFieldFecha);
 		
 		JLabel lblComent = new JLabel("Comentario: ");
-		lblComent.setBounds(392, 328, 192, 14);
+		lblComent.setBounds(392, 328, 150, 14);
 		contentPane.add(lblComent);
 		
 		JTextArea textAreaComentario = new JTextArea();

@@ -47,6 +47,7 @@ public class VentanaInicio extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 751, 480);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -75,11 +76,11 @@ public class VentanaInicio extends JFrame {
 				lg.setLocationRelativeTo(null);
 			}
 		});
-		btnLogin.setBounds(288, 359, 180, 42);
+		btnLogin.setBounds(298, 369, 147, 32);
 		contentPane.add(btnLogin);
 		
 		JLabel lblCreate = new JLabel("Crear una Cuenta");
-		lblCreate.setBounds(288, 405, 131, 14);
+		lblCreate.setBounds(298, 405, 131, 14);
 		contentPane.add(lblCreate);
 		lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
