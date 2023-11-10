@@ -1,25 +1,14 @@
 package Vista;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import java.awt.GridLayout;
-import javax.swing.BoxLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JTextField;
-import javax.swing.JTabbedPane;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -91,4 +80,5 @@ public class VentanaPrincipal extends JFrame {
 		table.setBounds(10, 11, 729, 349);
 		contentPane.add(table);
 	}
+
 }

@@ -31,6 +31,7 @@ public class VentanaInicio extends JFrame {
 				try {
 					VentanaInicio frame = new VentanaInicio();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
