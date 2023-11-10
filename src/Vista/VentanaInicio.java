@@ -47,6 +47,7 @@ public class VentanaInicio extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaInicio() {
+		setTitle("Ventana Inicio");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 751, 480);
 		contentPane = new JPanel();
@@ -82,7 +83,7 @@ public class VentanaInicio extends JFrame {
 		contentPane.add(btnLogin);
 		
 		JLabel lblCreate = new JLabel("Crear una Cuenta");
-		lblCreate.setBounds(298, 405, 121, 14);
+		lblCreate.setBounds(288, 405, 131, 14);
 		contentPane.add(lblCreate);
 		lblCreate.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		

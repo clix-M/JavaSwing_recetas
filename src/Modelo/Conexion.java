@@ -17,9 +17,7 @@ public  class  Conexion {
 	private static String USER = "root";
 	private static String PASSWORD = "root";
 	
-	
-	
-	  
+
 	  public static Connection getConnection() {
 		  Connection connection = null;
 		  

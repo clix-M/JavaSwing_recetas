@@ -19,10 +19,12 @@ import javax.swing.JTabbedPane;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
 
 public class VentanaPrincipal extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -45,6 +47,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPrincipal() {
+		setTitle("Ventana Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 765, 493);
 		contentPane = new JPanel();
@@ -53,19 +56,39 @@ public class VentanaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("AGREGAR RECETA");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnAddReceta = new JButton("AGREGAR RECETA");
+		btnAddReceta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
     			AddReceta ar = new AddReceta();
     			ar.setVisible(true);
     			ar.setLocationRelativeTo(null);
 			}
 		});
-		btnNewButton.setBounds(10, 379, 147, 38);
-		contentPane.add(btnNewButton);
+		btnAddReceta.setBounds(10, 379, 147, 38);
+		contentPane.add(btnAddReceta);
 		
 		JButton btnVerRecetas = new JButton("VER RECETA");
-		btnVerRecetas.setBounds(178, 379, 147, 38);
+		btnVerRecetas.setBounds(210, 379, 147, 38);
 		contentPane.add(btnVerRecetas);
+		
+		JButton btnEditarReceta = new JButton("EDITAR RECETA");
+		btnEditarReceta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEditarReceta.setBounds(399, 379, 147, 38);
+		contentPane.add(btnEditarReceta);
+		
+		JButton btnEliminarReceta = new JButton("ELIMINAR RECETA");
+		btnEliminarReceta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEliminarReceta.setBounds(592, 379, 147, 38);
+		contentPane.add(btnEliminarReceta);
+		
+		table = new JTable();
+		table.setBounds(10, 11, 729, 349);
+		contentPane.add(table);
 	}
 }

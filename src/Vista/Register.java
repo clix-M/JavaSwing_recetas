@@ -54,6 +54,7 @@ public class Register extends JFrame {
 	 * Create the frame.
 	 */
 	public Register() {
+		setTitle("Register");
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 543, 353);
@@ -121,7 +122,7 @@ public class Register extends JFrame {
 				String contrasena = new String (passwordField.getPassword());
 				
 				if(user.equals("") || correo.equals("") || passwordField.getPassword().length ==0) {
-					JOptionPane.showMessageDialog(contentPane, "Ingreso todos los campos requeridos");
+					JOptionPane.showMessageDialog(contentPane, "Ingreso de todos los campos requeridos");
 					return;
 				}
 				
@@ -133,7 +134,7 @@ public class Register extends JFrame {
 					if(query.next()) {
 						JOptionPane.showMessageDialog(contentPane, "El correo ya existe");
 					}else {
-						data.executeUpdate("INSERT INTO usuarios (NOMBRE, CORREO_ELECTRONICO, CONTRASENA) VALUES ('"+ user +"','"+ correo +"','"+ contrasena +"') ");
+						data.executeUpdate("INSERT INTO usuario (NOMBRE, CORREO_ELECTRONICO, CONTRASENA) VALUES ('"+ user +"','"+ correo +"','"+ contrasena +"') ");
 						JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
 						
 					}
