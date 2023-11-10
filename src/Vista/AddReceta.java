@@ -143,10 +143,10 @@ public class AddReceta extends JFrame {
 	        textFieldCantidad.setBounds(196, 210, 162, 20);
 	        contentPane.add(textFieldCantidad);
 	        
-	        JLabel lblComentarios = new JLabel("COMENTARIO:");
-	        lblComentarios.setFont(new Font("Tahoma", Font.BOLD, 12));
-	        lblComentarios.setBounds(395, 80, 103, 14);
-	        contentPane.add(lblComentarios);
+	        JLabel lblTitleComentarios = new JLabel("COMENTARIO:");
+	        lblTitleComentarios.setFont(new Font("Tahoma", Font.BOLD, 12));
+	        lblTitleComentarios.setBounds(395, 80, 103, 14);
+	        contentPane.add(lblTitleComentarios);
 	        
 	        JLabel lblNombreDelAutor = new JLabel("Nombre del Autor: ");
 	        lblNombreDelAutor.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -187,15 +187,15 @@ public class AddReceta extends JFrame {
 	        textFieldCategoria.setBounds(10, 255, 162, 20);
 	        contentPane.add(textFieldCategoria);
 	        
-	        JLabel lblIngredientes = new JLabel("INGREDIENTE:");
-	        lblIngredientes.setFont(new Font("Tahoma", Font.BOLD, 12));
-	        lblIngredientes.setBounds(196, 81, 103, 14);
-	        contentPane.add(lblIngredientes);
+	        JLabel lblTitleIngredientes = new JLabel("INGREDIENTE:");
+	        lblTitleIngredientes.setFont(new Font("Tahoma", Font.BOLD, 12));
+	        lblTitleIngredientes.setBounds(196, 81, 103, 14);
+	        contentPane.add(lblTitleIngredientes);
 	        
-	        JLabel lblFavorito = new JLabel("FAVORITO:");
-	        lblFavorito.setFont(new Font("Tahoma", Font.BOLD, 12));
-	        lblFavorito.setBounds(584, 81, 103, 14);
-	        contentPane.add(lblFavorito);
+	        JLabel lblTitleFavorito = new JLabel("FAVORITO:");
+	        lblTitleFavorito.setFont(new Font("Tahoma", Font.BOLD, 12));
+	        lblTitleFavorito.setBounds(584, 81, 103, 14);
+	        contentPane.add(lblTitleFavorito);
 	        
 	        JButton btnGuardar = new JButton("GUARDAR");
 	        btnGuardar.addActionListener(new ActionListener() {
@@ -206,9 +206,9 @@ public class AddReceta extends JFrame {
 	        btnGuardar.setBounds(378, 422, 120, 36);
 	        contentPane.add(btnGuardar);
 	        
-	        JLabel lblNewLabel_1 = new JLabel("RECETA:");
-	        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-	        lblNewLabel_1.setBounds(10, 80, 162, 14);
-	        contentPane.add(lblNewLabel_1);
+	        JLabel lblTitleReceta = new JLabel("RECETA:");
+	        lblTitleReceta.setFont(new Font("Tahoma", Font.BOLD, 12));
+	        lblTitleReceta.setBounds(10, 80, 162, 14);
+	        contentPane.add(lblTitleReceta);
 	}
 }
