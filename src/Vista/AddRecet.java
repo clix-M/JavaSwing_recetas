@@ -108,10 +108,10 @@ public class AddRecet extends JFrame {
         comboBoxOptionDif.setModel(comboBoxModel);
 		contentPane.add(comboBoxOptionDif);
 		
-		JLabel lblNewLabel_2 = new JLabel("INGREDIENTE:");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_2.setBounds(396, 79, 188, 14);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblSubTitleIngred = new JLabel("INGREDIENTE:");
+		lblSubTitleIngred.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSubTitleIngred.setBounds(396, 79, 188, 14);
+		contentPane.add(lblSubTitleIngred);
 		
 		JLabel lblNomIngre = new JLabel("Nombre: ");
 		lblNomIngre.setBounds(392, 120, 62, 14);
@@ -131,10 +131,10 @@ public class AddRecet extends JFrame {
 		textFieldMedida.setBounds(448, 146, 136, 20);
 		contentPane.add(textFieldMedida);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("COMENTARIO: ");
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_2_1.setBounds(392, 232, 188, 14);
-		contentPane.add(lblNewLabel_2_1);
+		JLabel lblSubTitleComent = new JLabel("COMENTARIO: ");
+		lblSubTitleComent.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblSubTitleComent.setBounds(392, 232, 188, 14);
+		contentPane.add(lblSubTitleComent);
 		
 		JLabel lblAutor = new JLabel("Autor: ");
 		lblAutor.setBounds(392, 270, 62, 14);
