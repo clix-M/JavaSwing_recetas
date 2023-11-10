@@ -52,6 +52,7 @@ CREATE TABLE Usuario (
 
 CREATE TABLE Favorito (
   id_favorito INT PRIMARY KEY AUTO_INCREMENT,
+  favorito BOOLEAN,
   id_usuario INT,
   id_receta INT
 );
