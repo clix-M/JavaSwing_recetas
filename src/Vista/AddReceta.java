@@ -181,6 +181,17 @@ public class AddReceta extends JFrame {
 	        lblCategoria.setBounds(10, 241, 69, 14);
 	        contentPane.add(lblCategoria);
 	        
+<<<<<<< HEAD
+=======
+	        textFieldCategoria = new JTextField();
+	        textFieldCategoria.setColumns(10);
+	        textFieldCategoria.setBounds(10, 255, 162, 20);
+	        contentPane.add(textFieldCategoria);
+
+
+
+	        
+>>>>>>> c8f19b2326bb9aaf94a44a63b5ba5389d49f1020
 	        JLabel lblTitleIngredientes = new JLabel("INGREDIENTE:");
 	        lblTitleIngredientes.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleIngredientes.setBounds(196, 81, 103, 14);
@@ -194,6 +205,13 @@ public class AddReceta extends JFrame {
 	        JButton btnGuardar = new JButton("GUARDAR");
 	        btnGuardar.addActionListener(new ActionListener() {
 	        	public void actionPerformed(ActionEvent e) {
+	        		
+	        		String nombreReceta = textFieldNombreReceta.getText();
+	                String descripcion = textAreaDescripcion.getText();
+	                int tiempoPrep = Integer.parseInt(textFieldTiempoPrep.getText());
+	                String instruccionPrep = textAreaInstruccionPrep.getText();
+	                int dificultad = comboBoxOpciones.getSelectedIndex(); // 0: "", 1: "Fácil", 2: "Intermedio", 3: "Difícil"
+	                int idCategoria = Integer.parseInt(textFieldCategoria.getText());
 	        		
 	        	}
 	        });

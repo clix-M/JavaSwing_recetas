@@ -13,7 +13,7 @@ public  class  Conexion {
 	*/
 	
 	
-	private static String URL = "jdbc:mysql://localhost://3306/myssql_recetas";
+	private static String URL = "jdbc:mysql://localhost:3306/myssql_recetas";
 	private static String USER = "root";
 	private static String PASSWORD = "root";
 	
