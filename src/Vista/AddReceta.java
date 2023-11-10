@@ -13,6 +13,8 @@ import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JSpinner;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AddReceta extends JFrame {
 
@@ -195,9 +197,14 @@ public class AddReceta extends JFrame {
 	        lblFavorito.setBounds(584, 81, 103, 14);
 	        contentPane.add(lblFavorito);
 	        
-	        JButton btnNewButton = new JButton("GUARDAR");
-	        btnNewButton.setBounds(378, 422, 120, 36);
-	        contentPane.add(btnNewButton);
+	        JButton btnGuardar = new JButton("GUARDAR");
+	        btnGuardar.addActionListener(new ActionListener() {
+	        	public void actionPerformed(ActionEvent e) {
+	        		
+	        	}
+	        });
+	        btnGuardar.setBounds(378, 422, 120, 36);
+	        contentPane.add(btnGuardar);
 	        
 	        JLabel lblNewLabel_1 = new JLabel("RECETA:");
 	        lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));

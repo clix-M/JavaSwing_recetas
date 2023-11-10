@@ -56,7 +56,9 @@ public class VentanaPrincipal extends JFrame {
 		JButton btnNewButton = new JButton("AGREGAR RECETA");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+    			AddReceta ar = new AddReceta();
+    			ar.setVisible(true);
+    			ar.setLocationRelativeTo(null);
 			}
 		});
 		btnNewButton.setBounds(10, 379, 147, 38);
