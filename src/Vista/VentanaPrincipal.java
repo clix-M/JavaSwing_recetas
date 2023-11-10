@@ -63,5 +63,9 @@ public class VentanaPrincipal extends JFrame {
 		});
 		btnNewButton.setBounds(10, 379, 147, 38);
 		contentPane.add(btnNewButton);
+		
+		JButton btnVerRecetas = new JButton("VER RECETA");
+		btnVerRecetas.setBounds(178, 379, 147, 38);
+		contentPane.add(btnVerRecetas);
 	}
 }

@@ -51,7 +51,6 @@ public class AddReceta extends JFrame {
 	 */
 	public AddReceta() {
 		setTitle("AGREGAR RECETA");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 758, 542);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
