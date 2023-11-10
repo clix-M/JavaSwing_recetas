@@ -69,7 +69,7 @@ public class AddRecet extends JFrame {
 		textFieldNomRece.setColumns(10);
 		
 		JLabel lblDescri = new JLabel("Descripcion: ");
-		lblDescri.setBounds(95, 108, 92, 14);
+		lblDescri.setBounds(95, 108, 192, 14);
 		contentPane.add(lblDescri);
 		
 		JTextArea textAreaDescrip = new JTextArea();
@@ -86,7 +86,7 @@ public class AddRecet extends JFrame {
 		textFieldTimePrepar.setColumns(10);
 		
 		JLabel lblDetallPrep = new JLabel("Instrución de Preparación: ");
-		lblDetallPrep.setBounds(95, 228, 150, 14);
+		lblDetallPrep.setBounds(95, 228, 192, 14);
 		contentPane.add(lblDetallPrep);
 		
 		JTextArea textAreaDetailPrep = new JTextArea();
@@ -155,7 +155,7 @@ public class AddRecet extends JFrame {
 		contentPane.add(textFieldFecha);
 		
 		JLabel lblComent = new JLabel("Comentario: ");
-		lblComent.setBounds(392, 328, 150, 14);
+		lblComent.setBounds(392, 328, 192, 14);
 		contentPane.add(lblComent);
 		
 		JTextArea textAreaComentario = new JTextArea();
