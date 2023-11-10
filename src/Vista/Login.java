@@ -127,15 +127,15 @@ public class Login extends JFrame {
 				}
 				try {
 					Statement data = Conexion.getConnection().createStatement();
-					ResultSet query = data.executeQuery("SELECT * FROM usuarios WHERE nombre='" + user + "' AND contrasena='" + contrasena + "'");
+					ResultSet query = data.executeQuery("SELECT * FROM Usuario WHERE nombre='" + user + "' AND contrasena='" + contrasena + "'");
 					
 					if(query.next()) {
+						dispose();
+						
 						//abrira la ventana principal si ya tiene una cuenta creada...
 		    			VentanaPrincipal vp = new VentanaPrincipal();
 		    			vp.setVisible(true);
 		    			vp.setLocationRelativeTo(null);
-		    			
-						JOptionPane.showMessageDialog(panel, "Puedes ingresar.");
 					}else {
 						JOptionPane.showMessageDialog(panel, "Necesitas registrarte.");
 					}

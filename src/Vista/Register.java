@@ -129,14 +129,14 @@ public class Register extends JFrame {
 				try {
 					
 					Statement data = Conexion.getConnection().createStatement();
-					ResultSet query = data.executeQuery("SELECT * FROM usuarios WHERE correo_electronico='"+ correo +"' ");
+					ResultSet query = data.executeQuery("SELECT * FROM Usuario WHERE correo_electronico='"+ correo +"' ");
 					
 					if(query.next()) {
 						JOptionPane.showMessageDialog(contentPane, "El correo ya existe");
 					}else {
-						data.executeUpdate("INSERT INTO usuario (NOMBRE, CORREO_ELECTRONICO, CONTRASENA) VALUES ('"+ user +"','"+ correo +"','"+ contrasena +"') ");
+						data.executeUpdate("INSERT INTO Usuario (nombre, correo_electronico, contrasena) VALUES ('"+ user +"','"+ correo +"','"+ contrasena +"') ");
 						JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
-						
+		
 					}
 					
 					textUser.setText("");
@@ -145,9 +145,7 @@ public class Register extends JFrame {
 					
 					data.close();
 					
-					
-					
-					
+				
 					
 				}catch (SQLException ex) {
 	                ex.printStackTrace();
