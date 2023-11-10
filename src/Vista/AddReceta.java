@@ -20,6 +20,7 @@ public class AddReceta extends JFrame {
 
 	private JPanel contentPane;
 	private JComboBox<String> comboBoxOpciones;
+	private JComboBox<String> comboBoxOpcionCat;
 	private JTextField textFieldNombreReceta;
 	private JTextField textFieldTiempoPrep;
 	private JTextField textFieldNombreIngred;
@@ -27,7 +28,6 @@ public class AddReceta extends JFrame {
 	private JTextField textFieldCantidad;
 	private JTextField textFieldNombreAutor;
 	private JTextField textFieldFecha;
-	private JTextField textFieldCategoria;
 
 	/**
 	 * Launch the application.
@@ -181,11 +181,6 @@ public class AddReceta extends JFrame {
 	        lblCategoria.setBounds(10, 241, 69, 14);
 	        contentPane.add(lblCategoria);
 	        
-	        textFieldCategoria = new JTextField();
-	        textFieldCategoria.setColumns(10);
-	        textFieldCategoria.setBounds(10, 255, 162, 20);
-	        contentPane.add(textFieldCategoria);
-	        
 	        JLabel lblTitleIngredientes = new JLabel("INGREDIENTE:");
 	        lblTitleIngredientes.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleIngredientes.setBounds(196, 81, 103, 14);
@@ -209,5 +204,17 @@ public class AddReceta extends JFrame {
 	        lblTitleReceta.setFont(new Font("Tahoma", Font.BOLD, 12));
 	        lblTitleReceta.setBounds(10, 80, 162, 14);
 	        contentPane.add(lblTitleReceta);
+	        
+	        JComboBox comboBoxOpcionCat = new JComboBox();
+	        comboBoxOpcionCat.setBounds(10, 255, 162, 22);
+			 DefaultComboBoxModel<String> comboBoxModel2 = new DefaultComboBoxModel<>();
+			 	comboBoxModel2.addElement("");
+		        comboBoxModel2.addElement("Fácil");
+		        comboBoxModel2.addElement("Intermedio");
+		        comboBoxModel2.addElement("Difícil");
+
+		        comboBoxOpcionCat.setModel(comboBoxModel2);
+		        contentPane.add(comboBoxOpcionCat);
+	        contentPane.add(comboBoxOpcionCat);
 	}
 }
