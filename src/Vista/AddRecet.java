@@ -272,7 +272,7 @@ public class AddRecet extends JFrame {
 
 		                preparedStatement.executeUpdate();
 
-		                JOptionPane.showMessageDialog(contentPane, "EXITOSA.");
+		                JOptionPane.showMessageDialog(contentPane, "EXITO ERES UN CRACK.");
 
 		                preparedStatement.close();
 		            } catch (SQLException ex) {
