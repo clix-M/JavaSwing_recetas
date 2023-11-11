@@ -92,8 +92,7 @@ public class CreateRecet extends JFrame {
 		    			ar.setLocationRelativeTo(null);
 		    			
 		    			dispose();
-		    			
-		    
+		    		
 					} catch (SQLException ex) {
 		                throw new RuntimeException(ex);
 		            }

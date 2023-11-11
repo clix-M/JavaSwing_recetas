@@ -5,10 +5,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Modelo.Conexion;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
@@ -194,10 +203,99 @@ public class AddRecet extends JFrame {
 		contentPane.add(btnCrear);
 		
 		btnCrear.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(e.getSource()== btnCrear) {
+				if(e.getSource() == btnCrear) {
+				/*	try {
+						
+						
+						String nombre = textFieldNomIngre.getText();
+						
+						Statement data = Conexion.getConnection().createStatement();
+						data.executeUpdate("INSERT INTO Receta (nombre) VALUES ('"+ nombre +"') ");
+						
+						JOptionPane.showMessageDialog(contentPane, "EXITOSA.");
+						
+						data.close();
+						
 					
+						
+					}catch (SQLException ex) {
+		                ex.printStackTrace();
+		            }
+		            */
+					
+					try {
+		                String nombre = textFieldNomRece.getText();
+		                String descripcion = textAreaDescrip.getText();
+		                String tiempo_de_preparacion = textFieldTimePrepar.getText();
+		                String instruccion_de_preparacion = textAreaDetailPrep.getText();
+		                String dificultad = (String) comboBoxOptionDif.getSelectedItem();
+		                String categoria = (String) comboBoxOptionCat.getSelectedItem();
+
+		                int dificultadInt;
+		                switch (dificultad) {
+		                    case "Fácil":
+		                        dificultadInt = 1;
+		                        break;
+		                    case "Medio":
+		                        dificultadInt = 2;
+		                        break;
+		                    case "Difícil":
+		                        dificultadInt = 3;
+		                        break;
+		                    default:
+		                        throw new IllegalArgumentException("Dificultad no válida: " + dificultad);
+		                }
+
+		                int categoriaInt;
+		                switch (categoria) {
+		                    case "Test":
+		                        categoriaInt = 1;
+		                        break;
+		                    case "Test2":
+		                        categoriaInt = 2;
+		                        break;
+		                    case "Test3":
+		                        categoriaInt = 3;
+		                        break;
+		                    default:
+		                        throw new IllegalArgumentException("Categoría no válida: " + categoria);
+		                }
+
+		                PreparedStatement preparedStatement = Conexion.getConnection().prepareStatement("INSERT INTO Receta (nombre, descripcion, tiempo_de_preparacion, instruccion_de_preparacion, dificultad, id_categoria) VALUES (?, ?, ?, ?, ?, ?)");
+		                preparedStatement.setString(1, nombre);
+		                preparedStatement.setString(2, descripcion);
+		                preparedStatement.setString(3, tiempo_de_preparacion);
+		                preparedStatement.setString(4, instruccion_de_preparacion);
+		                preparedStatement.setInt(5, dificultadInt);
+		                preparedStatement.setInt(6, categoriaInt);
+
+		                preparedStatement.executeUpdate();
+
+		                JOptionPane.showMessageDialog(contentPane, "EXITOSA.");
+
+		                preparedStatement.close();
+		            } catch (SQLException ex) {
+		                ex.printStackTrace();
+		            }
+					
+					/*
+					 
+					 para reparar el error
+					 
+					 String categoria = (String) comboBoxOptionCat.getSelectedItem();
+
+// Obtén el ID de la categoría correspondiente al nombre seleccionado
+PreparedStatement preparedStatementCategoria = Conexion.getConnection().prepareStatement("SELECT id_categoria FROM Categoria WHERE nombre = ?");
+preparedStatementCategoria.setString(1, categoria);
+ResultSet resultSet = preparedStatementCategoria.executeQuery();
+
+if (!resultSet.next()) {
+    throw new IllegalArgumentException("Categoría no válida: " + categoria);
+}
+
+int categoriaInt = resultSet.getInt("id_categoria");
+					 */
 				}
 				
 			}
