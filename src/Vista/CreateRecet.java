@@ -77,25 +77,34 @@ public class CreateRecet extends JFrame {
 			
 				
 				if(e.getSource()== btnNewButton) {
-					try {
-						String nombre = textFieldNameRecet.getText();
-						
-						Statement data = Conexion.getConnection().createStatement();
-						data.executeUpdate("INSERT INTO Receta  (nombre ) VALUES ('"+ nombre +"') ");
-						
-						JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
-						dispose();
+					
+					
+					String nombre = textFieldNameRecet.getText();
+					if(nombre.equals("")) {
+						JOptionPane.showMessageDialog(contentPane, "Por facvor ingrese el nomnre");
+					}else {
 						
 						
-						AddRecet ar= new AddRecet();
-		    			ar.setVisible(true);
-		    			ar.setLocationRelativeTo(null);
-		    			
-		    			dispose();
-		    		
-					} catch (SQLException ex) {
-		                throw new RuntimeException(ex);
-		            }
+						try {
+							
+							Statement data = Conexion.getConnection().createStatement();
+							data.executeUpdate("INSERT INTO Receta  (nombre ) VALUES ('"+ nombre +"') ");
+							
+							JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
+							dispose();
+							
+							
+							AddRecet ar= new AddRecet();
+			    			ar.setVisible(true);
+			    			ar.setLocationRelativeTo(null);
+			    			
+			    			dispose();
+			    		
+						} catch (SQLException ex) {
+			                throw new RuntimeException(ex);
+			            }
+					}
+				
 				}
     		
 				
