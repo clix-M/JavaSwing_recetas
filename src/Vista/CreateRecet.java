@@ -5,11 +5,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Modelo.Conexion;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import java.awt.Window.Type;
 
@@ -65,10 +73,33 @@ public class CreateRecet extends JFrame {
 		JButton btnNewButton = new JButton("CREAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddRecet ar= new AddRecet();
-    			ar.setVisible(true);
-    			ar.setLocationRelativeTo(null);
-    			dispose();
+				
+			
+				
+				if(e.getSource()== btnNewButton) {
+					try {
+						String nombre = textFieldNameRecet.getText();
+						
+						Statement data = Conexion.getConnection().createStatement();
+						data.executeUpdate("INSERT INTO Receta  (nombre ) VALUES ('"+ nombre +"') ");
+						
+						JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
+						dispose();
+						
+						
+						AddRecet ar= new AddRecet();
+		    			ar.setVisible(true);
+		    			ar.setLocationRelativeTo(null);
+		    			
+		    			dispose();
+		    			
+		    
+					} catch (SQLException ex) {
+		                throw new RuntimeException(ex);
+		            }
+				}
+    		
+				
 			}
 		});
 		btnNewButton.setBounds(67, 184, 89, 23);
@@ -77,7 +108,9 @@ public class CreateRecet extends JFrame {
 		JButton btnCancelar = new JButton("CANCELAR");
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				if(e.getSource() == btnCancelar) {
+					dispose();
+				}
 			}
 		});
 		btnCancelar.setBounds(263, 184, 108, 23);

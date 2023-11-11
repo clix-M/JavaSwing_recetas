@@ -74,6 +74,7 @@ public class VentanaInicio extends JFrame {
 				Login lg = new Login();
 				lg.setVisible(true);
 				lg.setLocationRelativeTo(null);
+				dispose();
 			}
 		});
 		btnLogin.setBounds(298, 369, 147, 32);
@@ -97,6 +98,7 @@ public class VentanaInicio extends JFrame {
     			Register rg = new Register();
 				rg.setVisible(true);
 				rg.setLocationRelativeTo(null);
+				dispose();
             }
             @Override
             public void mouseEntered(MouseEvent e) {

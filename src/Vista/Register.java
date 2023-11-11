@@ -136,6 +136,12 @@ public class Register extends JFrame {
 					}else {
 						data.executeUpdate("INSERT INTO Usuario (nombre, correo_electronico, contrasena) VALUES ('"+ user +"','"+ correo +"','"+ contrasena +"') ");
 						JOptionPane.showMessageDialog(contentPane, "Registro existosa.");
+						dispose();
+						
+						
+						VentanaPrincipal vp = new VentanaPrincipal();
+		    			vp.setVisible(true);
+		    			vp.setLocationRelativeTo(null);
 		
 					}
 					
