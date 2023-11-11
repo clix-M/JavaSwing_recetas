@@ -1,6 +1,7 @@
 package Vista;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -13,6 +14,7 @@ import java.sql.Statement;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -108,8 +110,24 @@ public class Login extends JFrame {
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setIcon(new ImageIcon(Login.class.getResource("/img/icons8-iniciar-sesión-16.png")));
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnLogin.setBounds(296, 201, 180, 23);
+		btnLogin.setBounds(296, 212, 180, 23);
 		panel.add(btnLogin);
+		
+		JCheckBox chckbxContraseña = new JCheckBox("Ver Contraseña");
+		chckbxContraseña.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		chckbxContraseña.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				JCheckBox checkBox = (JCheckBox) e.getSource();
+                if (checkBox.isSelected()) {
+                	passwFieldContraseña.setEchoChar((char) 0); // Muestra la contraseña
+                } else {
+                	passwFieldContraseña.setEchoChar('\u2022'); // Oculta la contraseña con viñetas
+                }
+			}
+		});
+		chckbxContraseña.setBounds(296, 171, 180, 23);
+		panel.add(chckbxContraseña);
 		// validation
 		
 		btnLogin.addActionListener(new ActionListener() {
@@ -180,5 +198,4 @@ public class Login extends JFrame {
 	}*/
 
 	}
-
 }
