@@ -78,7 +78,11 @@ ADD FOREIGN KEY (id_receta) REFERENCES Receta(id_receta);
 
 ```
 
-link:
+# link:
 
 https://www.eclipse.org/downloads/download.php?file=/windowbuilder/updates/release/1.12.0/WindowBuilder-Updates-1.12.0.zip
+
+# Connector mysql:
+
+https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.28
 
